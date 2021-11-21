@@ -1,0 +1,197 @@
+#################################################################
+##############I3 CONFIG 2020 MOZER (BME & KIT)###################
+#################################################################
+
+set $mod Mod4
+
+# set hungarian keyboard-map
+exec setxkbmap hu
+
+
+# Setting previous wallpaper.
+exec --no-startup-id nitrogen --restore
+
+# Window borders.
+default_border none
+default_floating_border normal
+for_window [class="urxvt"] border none
+
+# setting gaps.
+gaps inner 5
+gaps outer 0
+
+# disable title bar in stacking mode
+new_window 1pixel
+
+# Window title and bar font.
+font pango:monaco 10
+
+# clipboard manager autostart
+exec --no-startup autocutsel
+
+# nm-applet autostart.
+exec --no-startup-id nm-applet
+
+# blueman-applet autostart
+exec --no-startup-id blueman-applet
+
+# cbatticon autostart.
+exec cbatticon -i symbolic
+
+# start a terminal emulator
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start web browser
+bindsym $mod+a exec firefox
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split v
+
+# split in vertical orientation
+bindsym $mod+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+#set floating modifier (set key to enable moving floating windows around)
+floating_modifier Mod4
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# switch to last workspace when the pressed key would switch to current
+workspace_auto_back_and_forth yes
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# screenshot (Mod+Tab --> image saved to screenshots; Mod+Shift+Tab --> image saved to screenshot and opened in GIMP [needs scrot to functionneeds scrot to function])
+bindsym $Mod+Tab exec scrot '%Y-%m-%d_scrot_$wx$h.png' -e 'mv $f ~/pix/scrots'
+bindsym $Mod+Shift+Tab exec scrot '%Y-%m-%d_scrot_$wx$h.png' -e 'mv $f ~/pix/scrots\n gimp ~/pix/scrots/%Y-%m-%d_scrot_$wx$h.png' 
+
+# enable floating windows for matlab
+for_window [class="Matlab"] floating enable
+for_window [class="MATLABWindow"] floating enable
+
+# enter resize mode
+bindsym $Mod+r mode resize
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 25 px or 25 ppt
+        bindsym j resize grow height 25 px or 25 ppt
+        bindsym k resize shrink height 25 px 25 10 ppt
+        bindsym l resize grow width 25 px or 25 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+
+
+# font used by i3 for titles and bars
+font pango:Hack 8
+
+# class                 border  bground text    indicator child_border
+client.focused          #000000 #FFF000 #000000 #000000   #FFF000
+client.focused_inactive #000000 #000000 #FFF000 #000000   #000000
+client.unfocused        #000000 #000000 #FFF000 #000000   #000000
+client.urgent           #FFFFFF #FF0000 #FFFFFF #FFFFFF   #FFFFFF
+client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
+
+client.background       #FFFFFF
+
+bar {
+  colors {
+    background #000000
+    statusline #FFF000
+    separator  #FFF000
+
+    focused_workspace  #000000 #FFF000 #000000
+    active_workspace   #000000 #000000 #FFF000
+    inactive_workspace #000000 #000000 #FFF000
+    urgent_workspace   #FFFFFF #FFFFFF #FF0000
+    binding_mode       #FFFFFF #FFFFFF #FF0000
+  }
+}
+
+bindsym $mod+d exec "dmenu_run -nf '#E000FF' -nb '#000000' -sb '#E000FF' -sf '#FFFFFF' -fn 'monospace-10' -p 'dmenu prompt &gt;'"

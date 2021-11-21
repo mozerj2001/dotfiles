@@ -1,0 +1,70 @@
+general{
+    output_format = "dzen2"
+    colors = true
+    interval = 5
+}
+
+order += "disk /"
+order += "ethernet enp2s0f1"
+order += "wireless wlan0"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "memory"
+order += "tztime berlin"
+
+# configurations
+
+ethernet eth0 {
+    format_up "E: %ip (%speed)"
+    format_down = "E: 0"
+}
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = "W: 0"
+}
+
+tztime berlin {
+    format = "%Y-%m-%d %H:%M:%S"
+    timezone = "CET"
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees C"
+    path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+    format = "%used"
+    threshold_degraded = "10%"
+    format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+    format = "%free"
+}
+
+
+
+# class                 border  bground text    indicator child_border
+#client.focused          #1A384E #1A384E #FFFFFF #2E9EF4   #204560
+#client.focused_inactive #29587A #29587A #FFFFFF #2E9EF4   #29587A
+#client.unfocused        #29587A #29587A #FFFFFF #2E9EF4   #29587A
+#client.urgent           #1A384E #FF0000 #FFFFFF #FF0000   #FF0000
+#client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+#client.background       #FFFFFF
+
+#bar {
+#  colors {
+#    background #1A384E
+#    statusline #FFFFFF
+#    separator  #FFFFFF
+#
+#    focused_workspace  #55B7FF #1A384E #55B7FF
+#    active_workspace   #55B7FF #1A384E #55B7FF
+#    inactive_workspace #1A384E #55B7FF #1A384E
+#    urgent_workspace   #FF0000 #FFFFFF #FF0000
+#    binding_mode       #FF0000 #FFFFFF #FF0000
+#  }
+#}

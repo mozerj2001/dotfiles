@@ -7,11 +7,14 @@ syntax on
 set relativenumber
 
 filetype plugin on  " enable plugins
+filetype indent on  " enable autoindenting
+set autoindent
 
 " plugins
 
 set noerrorbells	" No soundeffects on end of the line
 set tabstop=4 softtabstop=4	" Tab is 4 spaces long
+set shiftwidth=4
 set expandtab	" Write tab as spaces
 set smartindent	" Autoindenting
 set nowrap	" Line goes offscreen when too long
@@ -34,12 +37,8 @@ augroup project
 augroup END
 
 " autocompleting braces, parentheses and what have you
-inoremap {<Return> {<Return><Return>}<ESC>ki
 inoremap { {}<ESC>ha
 inoremap " ""<ESC>ha
-inoremap "<Space> "<Space>
-inoremap <<Return> <><ESC>ha
-inoremap <<Space> <
 inoremap ' ''<ESC>ha
 inoremap ( ()<ESC>ha
 inoremap [ []<ESC>ha

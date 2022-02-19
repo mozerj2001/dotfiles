@@ -8,32 +8,32 @@
 
 ! special
 *.foreground:   #ffffff
-*.background:   #000000
-*.cursorColor:  #fff000
+*.background:   #111111
+*.cursorColor:  #eab700
 
 ! black
-*.color0:       #232323
-*.color8:       #444444
+*.color0:       #4d4d4c
+*.color8:       #8e908c
 
 ! red
-*.color1:       #ff000f
-*.color9:       #ff2740
+*.color1:       #c82829
+*.color9:       #c82829
 
 ! green
-*.color2:       #8ce10b
-*.color10:      #abe15b
+*.color2:       #718c00
+*.color10:      #718c00
 
 ! yellow
-*.color3:       #ffb900
-*.color11:      #ffd242
+*.color3:       #f5871f
+*.color11:      #eab700
 
 ! blue
-*.color4:       #008df8
-*.color12:      #0092ff
+*.color4:       #4271ae
+*.color12:      #3e999f
 
 ! magenta
-*.color5:       #6d43a6
-*.color13:      #9a5feb
+*.color5:       #8959a8
+*.color13:      #8959a8
 
 ! cyan
 *.color6:       #00d8eb
@@ -50,13 +50,13 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
 ! font settings
-URxvt.font: xft:monaco:size=12
+URxvt.font: xft:terminus:size=10
 
 ! spacing
 URxvt.letterSpace: -4
 
 ! transparency
-URxvt.transparent: true
+URxvt.transparent: false
 URxvt.shading: 10
 
 ! enable/disable scrollbar

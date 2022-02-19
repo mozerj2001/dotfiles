@@ -39,7 +39,7 @@ exec --no-startup-id blueman-applet
 exec cbatticon -i symbolic
 
 # start a terminal emulator
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill

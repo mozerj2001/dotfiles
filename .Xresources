@@ -9,31 +9,31 @@
 ! special
 *.foreground:   #ffffff
 *.background:   #000000
-*.cursorColor:  #fff000
+*.cursorColor:  #fff800
 
 ! black
-*.color0:       #232323
-*.color8:       #444444
+*.color0:       #111111
+*.color8:       #1111110
 
 ! red
-*.color1:       #ff000f
-*.color9:       #ff2740
+*.color1:       #ff0000
+*.color9:       #ff0000
 
 ! green
-*.color2:       #8ce10b
-*.color10:      #abe15b
+*.color2:       #00ff00
+*.color10:      #00ff00
 
 ! yellow
-*.color3:       #ffb900
-*.color11:      #ffd242
+*.color3:       #fff800
+*.color11:      #fff800
 
 ! blue
 *.color4:       #008df8
 *.color12:      #0092ff
 
 ! magenta
-*.color5:       #6d43a6
-*.color13:      #9a5feb
+*.color5:       #ff00bf
+*.color13:      #ff00bf
 
 ! cyan
 *.color6:       #00d8eb
@@ -50,14 +50,14 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
 ! font settings
-URxvt.font: xft:monaco:size=12
+URxvt.font: xft:IBM Plex Mono:size=10
 
 ! spacing
-URxvt.letterSpace: -4
+! URxvt.letterSpace: -4
 
 ! transparency
 URxvt.transparent: true
-URxvt.shading: 10
+URxvt.shading: 30
 
 ! enable/disable scrollbar
 URxvt.scrollBar: false

@@ -39,7 +39,9 @@ exec --no-startup-id blueman-applet
 exec cbatticon -i symbolic
 
 # start a terminal emulator
-bindsym $mod+Return exec xterm
+# bindsym $mod+Return exec xterm
+bindsym $mod+Return exec urxvt
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -172,7 +174,7 @@ mode "resize" {
 font pango:Hack 8
 
 # class                 border  bground text    indicator child_border
-client.focused          #000000 #FFF000 #000000 #000000   #FFF000
+client.focused          #FFF000 #FFF000 #000000 #000000   #FFF000
 client.focused_inactive #000000 #000000 #FFF000 #000000   #000000
 client.unfocused        #000000 #000000 #FFF000 #000000   #000000
 client.urgent           #FFFFFF #FF0000 #FFFFFF #FFFFFF   #FFFFFF

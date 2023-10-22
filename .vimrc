@@ -55,6 +55,9 @@ if has('gui_running')
     autocmd BufRead,BufNewFile *.py colorscheme everforest
     autocmd BufRead,BufNewFile *.py set background=dark
     autocmd BufRead,BufNewFile *.sv colorscheme gruvbox
+    autocmd BufRead,BufNewFile *.v colorscheme gruvbox
+    autocmd BufRead,BufNewFile *.v set background=dark
+
 
     " Disable toolbar and scrollbars
     set guioptions-=T

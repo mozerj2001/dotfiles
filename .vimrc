@@ -5,6 +5,7 @@
 " syntax and numbering on
 syntax on
 set relativenumber
+set number
 
 filetype on                                     " enable file type detection
 filetype plugin on                              " enable plugins
@@ -58,11 +59,21 @@ if has('gui_running')
     autocmd BufRead,BufNewFile *.v colorscheme gruvbox
     autocmd BufRead,BufNewFile *.v set background=dark
 
-
     " Disable toolbar and scrollbars
     set guioptions-=T
     set guioptions-=L
     set guioptions-=r
     set guioptions-=m
     set guioptions-=b
+
+    " set up copy and paste
+    nnoremap <M-S-c> "+y  " Normal (must follow with an operator)
+    xnoremap <M-S-c> "+y  " Visual
+    nnoremap <M-S-v> "+p  " Normal
+    noremap! <M-S-v> <C-r>+  " Insert and Command line
+    inoremap <M-S-v> <C-r>+  " Insert
 endif
+
+
+
+
